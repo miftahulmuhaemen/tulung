@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/bg_logo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/logo"
+
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="@dimen/medium_margin_globally"
+        android:src="@drawable/logo"
+
+        app:layout_constraintEnd_toEndOf="@id/ti_email"
+        app:layout_constraintStart_toStartOf="@id/ti_email"
+        app:layout_constraintBottom_toTopOf="@id/ti_email"
+        />
+
+    <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+        android:id="@+id/ti_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        app:labelText="Surel"
+        app:primaryColor="@color/colorPrimary"
+        app:hasClearButton="true"
+        app:useDenseSpacing="true"
+
+        android:layout_marginLeft="@dimen/fragment_vertical_margin"
+        android:layout_marginRight="@dimen/fragment_vertical_margin"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4"
+        >
+
+        <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+            android:id="@+id/edt_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:lines="1"
+            />
+
+    </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+
+    <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+        android:id="@+id/ti_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_margin_globally"
+
+        app:endIcon="@drawable/ic_remove_red_eye_white_24dp"
+
+        android:focusedByDefault="false"
+        app:labelText="Kata Sandi"
+        app:primaryColor="@color/colorPrimary"
+        app:hasClearButton="true"
+        app:useDenseSpacing="true"
+
+        app:layout_constraintEnd_toEndOf="@id/ti_email"
+        app:layout_constraintStart_toStartOf="@id/ti_email"
+        app:layout_constraintTop_toBottomOf="@id/ti_email">
+
+        <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+            android:id="@+id/edt_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            />
+
+    </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/edittext_height_natural"
+        android:layout_marginTop="@dimen/medium_margin_globally"
+
+        android:text="Masuk"
+        android:background="@color/colorPrimary"
+        android:textAllCaps="false"
+        android:textColor="@color/White"
+        app:layout_constraintStart_toStartOf="@id/ti_password"
+        app:layout_constraintEnd_toEndOf="@id/ti_email"
+        app:layout_constraintTop_toBottomOf="@id/ti_password" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_daftar"
+        />
+
+    <Button
+        android:id="@+id/btn_daftar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:text="@string/daftar"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <ProgressBar
+        android:id="@+id/progressbarLogin"
+        android:progressTint="@color/colorAccent"
+        android:secondaryProgressTint="@color/colorAccent"
+        android:indeterminateTint="@color/colorAccent"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/fragment_vertical_margin"
+        app:layout_constraintBottom_toTopOf="@id/btn_daftar"
+        app:layout_constraintEnd_toEndOf="@id/ti_password"
+        app:layout_constraintStart_toStartOf="@id/ti_password"
+        android:visibility="gone"
+        />
+
+
+
+</android.support.constraint.ConstraintLayout>

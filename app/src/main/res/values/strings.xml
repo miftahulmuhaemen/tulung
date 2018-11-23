@@ -1,0 +1,8 @@
+<resources>
+    <string name="daftar">Anda tidak punya akun? <b>Daftar</b>.</string>
+    <string name="masuk">Anda sudah punya akun? <b>Masuk</b></string>
+    <string name="lupa_katasandi">Lupa Katasandi?</string>
+
+    <string name="app_name">Tulung</string>
+    <string name="logo">logo</string>
+</resources>
