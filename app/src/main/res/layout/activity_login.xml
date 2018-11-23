@@ -63,7 +63,6 @@
 
         app:endIcon="@drawable/ic_remove_red_eye_white_24dp"
 
-        android:focusedByDefault="false"
         app:labelText="Kata Sandi"
         app:primaryColor="@color/colorPrimary"
         app:hasClearButton="true"
@@ -88,8 +87,9 @@
         android:layout_height="@dimen/edittext_height_natural"
         android:layout_marginTop="@dimen/medium_margin_globally"
 
+        android:theme="@style/Button"
+
         android:text="Masuk"
-        android:background="@color/colorPrimary"
         android:textAllCaps="false"
         android:textColor="@color/White"
         app:layout_constraintStart_toStartOf="@id/ti_password"
@@ -119,9 +119,9 @@
 
     <ProgressBar
         android:id="@+id/progressbarLogin"
-        android:progressTint="@color/colorAccent"
-        android:secondaryProgressTint="@color/colorAccent"
-        android:indeterminateTint="@color/colorAccent"
+        android:progressTint="@color/colorPrimary"
+        android:secondaryProgressTint="@color/colorPrimary"
+        android:indeterminateTint="@color/colorPrimary"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -131,7 +131,5 @@
         app:layout_constraintStart_toStartOf="@id/ti_password"
         android:visibility="gone"
         />
-
-
 
 </android.support.constraint.ConstraintLayout>

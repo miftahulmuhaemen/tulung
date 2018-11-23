@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+        android:id="@+id/ti_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:labelText="Email"
+        app:hasClearButton="true"
+        app:useDenseSpacing="true"
+        >
+
+        <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+            android:id="@+id/edt_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+    </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+
+
+    <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+        android:id="@+id/ti_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_margin_globally"
+
+        app:labelText="Password"
+        app:hasClearButton="true"
+        app:useDenseSpacing="true"
+        >
+
+        <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+            android:id="@+id/edt_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+    </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+
+
+    <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+        android:id="@+id/ti_kontakkerabat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_margin_globally"
+
+        app:labelText="Kontak Kerabat"
+        app:hasClearButton="true"
+        app:useDenseSpacing="true"
+        app:helperText="Silahkan diisi dengan kontak teman atau keluarga dekat anda untuk dapat dihubungi pada saat genting."
+        >
+
+        <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+            android:id="@+id/edt_kontakkerabat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="8"
+            android:maxLines="8"
+            />
+
+    </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+</LinearLayout>
