@@ -55,7 +55,9 @@ public class RegisterFragment extends Fragment implements Implictly {
     @Nullable @BindView(R.id.ti_email) TextFieldBoxes ti_email;
     @Nullable @BindView(R.id.ti_password) TextFieldBoxes ti_password;
     @Nullable @BindView(R.id.ti_kontakkerabat) TextFieldBoxes ti_kontakkerabat;
+    @Nullable @BindView(R.id.ti_tinggi) TextFieldBoxes ti_tinggi;
 
+    @Nullable @BindView(R.id.edt_tinggi) ExtendedEditText edt_tinggi;
     @Nullable @BindView(R.id.edt_nama) ExtendedEditText edt_nama;
     @Nullable @BindView(R.id.edt_tempat) ExtendedEditText edt_tempat;
     @Nullable @BindView(R.id.edt_tanggalLahir) ExtendedEditText edt_tanggalLahir;
@@ -88,6 +90,9 @@ public class RegisterFragment extends Fragment implements Implictly {
                 ButterKnife.bind(this,view);
                 edt_beratbadan.setFilters(new InputFilter[] {
                         new InputFilter.LengthFilter(3)
+                });
+                edt_tinggi.setFilters(new InputFilter[] {
+                    new InputFilter.LengthFilter(3)
                 });
                 edt_tanggalLahir.setEnabled(false);
                 ti_tanggalLahir.getEndIconImageButton().setOnClickListener(new View.OnClickListener() {
@@ -126,7 +131,7 @@ public class RegisterFragment extends Fragment implements Implictly {
                 break;
             case FRAGMENT_REGISTER_FORTH :
                 view = inflater.inflate(R.layout.frag_register_last, container, false);
-                ButterKnife.bind(this,view);
+                ButterKnife.bind(this, view);
                 break;
 
             default: view =  null;
@@ -159,11 +164,17 @@ public class RegisterFragment extends Fragment implements Implictly {
                        tanggallahir = edt_tanggalLahir.getText().toString().trim(),
                        golongandarah = spinner_golongandarah.getText().toString().trim(),
                        alamat = edt_alamat.getText().toString().trim(),
+                       tinggi = edt_tinggi.getText().toString().trim(),
                        beratbadan = edt_beratbadan.getText().toString().trim();
 
                 if(TextUtils.isEmpty(nama)){
                     isComplete = false;
                     ti_nama.setError(ERROR_FIELD_KOSONG,false);
+                }
+
+                if(TextUtils.isEmpty(tinggi)){
+                    isComplete = false;
+                    ti_tinggi.setError(ERROR_FIELD_KOSONG,false);
                 }
 
                 if(TextUtils.isEmpty(tempat)){
@@ -193,6 +204,7 @@ public class RegisterFragment extends Fragment implements Implictly {
                     data.setBeratbadan(Integer.parseInt(beratbadan));
                     data.setGolongandarah(golongandarah);
                     data.setAlamat(alamat);
+                    data.setTinggi(Integer.parseInt(tinggi));
                 }
                 break;
 
@@ -256,17 +268,14 @@ public class RegisterFragment extends Fragment implements Implictly {
                     data.setPassword(password);
                     data.setKontakkerabat(kontakkerabat);
                 }
-
                 break;
         }
 
         if(isComplete){
             getResponses().onCompleteFormResponse(data, Fragment);
         }
-
         getResponses().onErrorFieldResponses(Fragment);
     }
-
 
     public interface onCompleteResponse {
         void onCompleteFormResponse(ItemProfile data, int FragmentIdentifier);

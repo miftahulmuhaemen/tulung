@@ -20,4 +20,5 @@ public class Util {
     public static String ERROR_NOT_MATCH_PASSWORD = "Tidak Cocok Dengan Kata Sandi Lama";
 
     public static String ACCOUNT_FIELD_FIREBASE = "account";
+    public static final int RC_SIGN_IN = 9001;
 }

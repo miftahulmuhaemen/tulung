@@ -44,7 +44,6 @@
             android:id="@+id/edt_tempat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
             android:lines="1"
             android:maxLines="1"
             />
@@ -78,23 +77,45 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="@dimen/medium_margin_globally"
-        android:weightSum="5">
+        android:weightSum="4.3">
 
         <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
             android:id="@+id/ti_beratbadan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1.2"
-            android:layout_marginRight="@dimen/medium_margin_globally"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/small_margin_globally"
 
-            app:iconSignifier="@drawable/ic_accessibility_black_24dp"
-            app:labelText="Berat Badan(Kg)"
+            app:labelText="Berat(kg)"
             app:hasClearButton="true"
             app:useDenseSpacing="true"
             >
 
             <studio.carbonylgroup.textfieldboxes.ExtendedEditText
                 android:id="@+id/edt_beratbadan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:lines="1"
+                android:maxLines="1"
+                />
+
+        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+            android:id="@+id/ti_tinggi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/small_margin_globally"
+
+            app:labelText="Tinggi(cm)"
+            app:hasClearButton="true"
+            app:useDenseSpacing="true"
+            >
+
+            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                android:id="@+id/edt_tinggi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -108,9 +129,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_weight="1.24"
             android:layout_marginRight="@dimen/small_margin_globally"
-            android:text="Golongan Darah"
+            android:text="Goldar"
             android:textColor="@color/Black"
             android:layout_gravity="center_vertical"
             android:gravity=""
@@ -120,7 +141,7 @@
             android:id="@+id/spinner_golongandarah"
             android:layout_width="match_parent"
             android:layout_height="@dimen/edittext_height_natural"
-            android:layout_weight="1.8"
+            android:layout_weight="1"
 
             android:hint="Golongan Darah"
             app:ms_background_color="#e8e8e8"

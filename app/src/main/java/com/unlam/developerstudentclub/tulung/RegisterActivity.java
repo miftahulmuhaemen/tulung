@@ -17,7 +17,9 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -38,6 +40,7 @@ import java.util.HashMap;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static android.view.View.GONE;
 import static com.unlam.developerstudentclub.tulung.Utils.Util.ACCOUNT_FIELD_FIREBASE;
 import static com.unlam.developerstudentclub.tulung.Utils.Util.FRAGEMENT_IDENTITY;
 import static com.unlam.developerstudentclub.tulung.Utils.Util.FRAGMENT_REGISTER_FIRST;
@@ -77,6 +80,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterFragm
     Implictly implictly; // Interface Composite GLOBAL_FRAGMENT
     ImplicitlyListenerComposite implicitlyListenerComposite = new ImplicitlyListenerComposite(); // Composite Listener
     DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference();
+    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -141,6 +145,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterFragm
                 finish();
             }
         });
+
     }
 
 
@@ -199,6 +204,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterFragm
             form.setBeratbadan(data.getBeratbadan());
             form.setGolongandarah(data.getGolongandarah());
             form.setAlamat(data.getAlamat());
+            form.setTinggi(data.getTinggi());
             FRAGMENT_firstSeal = true;
         }
 
@@ -219,27 +225,37 @@ public class RegisterActivity extends AppCompatActivity implements RegisterFragm
 
         if(FRAGMENT_firstSeal && FRAGMENT_secondSeal && FRAGMENT_thirdSeal){
 
-            dbRef.child(ACCOUNT_FIELD_FIREBASE).orderByChild("email").equalTo(form.getEmail())
-                    .addListenerForSingleValueEvent(new ValueEventListener() {
+            progressbar.setVisibility(View.VISIBLE);
+            firebaseAuth.createUserWithEmailAndPassword(form.getEmail(),form.getPassword())
+                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            if(!dataSnapshot.hasChildren()) {
-                                dbRef.child(ACCOUNT_FIELD_FIREBASE).push().setValue(form).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()){
+                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                form.setEmail("");
+                                form.setPassword("");
+                                dbRef.child(ACCOUNT_FIELD_FIREBASE).child(user.getUid()).setValue(form).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if (task.isSuccessful()) {
                                             viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
+                                            pageIndicatorView.setVisibility(View.INVISIBLE);
+                                            fab_left.setVisibility(View.INVISIBLE);
+                                            fab_right.setVisibility(View.INVISIBLE);
+                                            btn_masuk.setVisibility(View.INVISIBLE);
+                                            btn_done.setVisibility(View.VISIBLE);
+                                            progressbar.setVisibility(View.INVISIBLE);
                                         } else {
+                                            progressbar.setVisibility(GONE);
                                             Toast.makeText(getApplicationContext(),"Ada masalah koneksi dengan pusat", Toast.LENGTH_SHORT).show();
                                         }
                                     }
                                 });
                             }
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                            else{
+                                progressbar.setVisibility(GONE);
+                                Toast.makeText(getApplicationContext(),"E-mail anda sudah ada atau tidak sesuai.",Toast.LENGTH_SHORT).show();
+                            }
                         }
                     });
         }
@@ -251,13 +267,16 @@ public class RegisterActivity extends AppCompatActivity implements RegisterFragm
             if(!FRAGMENT_thirdSeal)
                 Toast.makeText(RegisterActivity.this, getResources().getString(R.string.toast_data_belum_benar), Toast.LENGTH_SHORT).show();
             else {
-                if(!FRAGMENT_secondSeal)
+                if(!FRAGMENT_secondSeal) {
+                    Toast.makeText(RegisterActivity.this, getResources().getString(R.string.toast_data_belum_benar) + "AAAAA", Toast.LENGTH_SHORT).show();
                     viewPager.setCurrentItem(viewPager.getCurrentItem() - 1);
-                else {
-                    if(!FRAGMENT_firstSeal)
-                        viewPager.setCurrentItem(viewPager.getCurrentItem() - 2);
                 }
-                Toast.makeText(RegisterActivity.this, getResources().getString(R.string.toast_data_belum_benar), Toast.LENGTH_SHORT).show();
+                else {
+                    if(!FRAGMENT_firstSeal) {
+                        viewPager.setCurrentItem(viewPager.getCurrentItem() - 2);
+                        Toast.makeText(RegisterActivity.this, getResources().getString(R.string.toast_data_belum_benar) + "AAAAA", Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
         }
     }
