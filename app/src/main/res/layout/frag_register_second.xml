@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -22,6 +23,7 @@
             android:layout_height="wrap_content"
             android:maxLines="3"
             android:lines="3"
+            android:gravity="top"
             />
 
     </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
@@ -44,6 +46,7 @@
             android:layout_height="wrap_content"
             android:maxLines="2"
             android:lines="2"
+            android:gravity="top"
             />
 
     </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
@@ -67,6 +70,7 @@
             android:layout_height="wrap_content"
             android:maxLines="2"
             android:lines="2"
+            android:gravity="top"
             />
 
     </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
@@ -90,6 +94,7 @@
             android:layout_height="wrap_content"
             android:maxLines="2"
             android:lines="2"
+            android:gravity="top"
             />
 
     </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>

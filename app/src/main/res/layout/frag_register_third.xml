@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -36,6 +37,8 @@
         app:labelText="Password"
         app:hasClearButton="true"
         app:useDenseSpacing="true"
+        app:helperText="Minimal 8 Karakter."
+        app:minCharacters="8"
         >
 
         <studio.carbonylgroup.textfieldboxes.ExtendedEditText
@@ -66,6 +69,7 @@
             android:layout_height="wrap_content"
             android:lines="8"
             android:maxLines="8"
+            android:gravity="top"
             />
 
     </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>

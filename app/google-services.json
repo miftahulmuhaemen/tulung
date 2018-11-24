@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "212961584979-hl3da07r0if3d042oka8c47fqc6stevg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.unlam.developerstudentclub.tulung",
+            "certificate_hash": "61552fc4c6aa4643608e449862f6e25612e797fd"
+          }
+        },
+        {
           "client_id": "212961584979-83ufa4q5ookkha2i2hm0difnefrn49km.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "212961584979-83ufa4q5ookkha2i2hm0difnefrn49km.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

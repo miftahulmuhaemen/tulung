@@ -11,4 +11,13 @@ public class Util {
 
     public static String FRAGEMENT_IDENTITY = "identity";
 
+    /**
+         * Validation String
+     **/
+
+    public static String ERROR_FIELD_KOSONG = "";
+    public static String ERROR_FIELD_EMAIL_NOTVALID = "Surel Tidak Sah";
+    public static String ERROR_NOT_MATCH_PASSWORD = "Tidak Cocok Dengan Kata Sandi Lama";
+
+    public static String ACCOUNT_FIELD_FIREBASE = "account";
 }
