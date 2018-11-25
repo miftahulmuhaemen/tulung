@@ -96,29 +96,6 @@
         app:layout_constraintEnd_toEndOf="@id/ti_email"
         app:layout_constraintTop_toBottomOf="@id/ti_password" />
 
-    <TextView
-        android:id="@+id/betweentext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/medium_margin_globally"
-        android:text="ATAU"
-
-        app:layout_constraintStart_toStartOf="@id/ti_password"
-        app:layout_constraintEnd_toEndOf="@id/ti_email"
-        app:layout_constraintTop_toBottomOf="@id/btn_login"
-        />
-
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/sign_in_button"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="@dimen/medium_margin_globally"
-
-        app:layout_constraintStart_toStartOf="@id/ti_password"
-        app:layout_constraintEnd_toEndOf="@id/ti_email"
-        app:layout_constraintTop_toBottomOf="@id/betweentext"
-        />
-
     <View
         android:layout_width="0dp"
         android:layout_height="1dp"

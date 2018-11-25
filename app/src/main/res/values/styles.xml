@@ -11,4 +11,8 @@
         <item name="colorButtonNormal">@color/colorPrimary</item>
     </style>
 
+    <style name="MainAlertButton">
+        <item name="colorButtonNormal">@color/colorPrimary</item>
+    </style>
+
 </resources>

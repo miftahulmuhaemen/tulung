@@ -56,7 +56,9 @@ public class RegisterFragment extends Fragment implements Implictly {
     @Nullable @BindView(R.id.ti_password) TextFieldBoxes ti_password;
     @Nullable @BindView(R.id.ti_kontakkerabat) TextFieldBoxes ti_kontakkerabat;
     @Nullable @BindView(R.id.ti_tinggi) TextFieldBoxes ti_tinggi;
+    @Nullable @BindView(R.id.ti_kontakpribadi) TextFieldBoxes ti_kontakpribadi;
 
+    @Nullable @BindView(R.id.edt_kontakpribadi) ExtendedEditText edt_kontakpribadi;
     @Nullable @BindView(R.id.edt_tinggi) ExtendedEditText edt_tinggi;
     @Nullable @BindView(R.id.edt_nama) ExtendedEditText edt_nama;
     @Nullable @BindView(R.id.edt_tempat) ExtendedEditText edt_tempat;
@@ -244,7 +246,8 @@ public class RegisterFragment extends Fragment implements Implictly {
             case FRAGMENT_REGISTER_THIRD :
                 String email = edt_email.getText().toString().trim(),
                        password = edt_password.getText().toString().trim(),
-                       kontakkerabat = edt_kontakkerabat.getText().toString().trim();
+                       kontakkerabat = edt_kontakkerabat.getText().toString().trim(),
+                       kontakpribadi = edt_kontakpribadi.getText().toString().trim();
 
                 if(TextUtils.isEmpty(email)){
                     isComplete = false;
@@ -252,6 +255,11 @@ public class RegisterFragment extends Fragment implements Implictly {
                 } else if (!isValidEmail(email)){
                     isComplete = false;
                     ti_email.setError(ERROR_FIELD_EMAIL_NOTVALID, false);
+                }
+
+                if(TextUtils.isEmpty(kontakpribadi)){
+                    isComplete = false;
+                    ti_kontakpribadi.setError(ERROR_FIELD_KOSONG, false);
                 }
 
                 if(TextUtils.isEmpty(password)){
@@ -267,6 +275,7 @@ public class RegisterFragment extends Fragment implements Implictly {
                     data.setEmail(email);
                     data.setPassword(password);
                     data.setKontakkerabat(kontakkerabat);
+                    data.setKontakpribadi(kontakpribadi);
                 }
                 break;
         }

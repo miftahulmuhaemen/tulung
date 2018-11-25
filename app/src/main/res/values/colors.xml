@@ -5,4 +5,6 @@
     <color name="colorAccent">#00574B</color>
     <color name="White">#FFF</color>
     <color name="Black">#000</color>
+    <color name="MainAlertButton">#f7f320</color>
+    <color name="dark">#212121</color>
 </resources>

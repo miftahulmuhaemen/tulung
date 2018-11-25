@@ -53,7 +53,6 @@ dependencies {
     implementation('devlight.io:navigationtabbar:1.2.5') {
         exclude group: "com.android.support"
     }
-
     implementation 'com.google.firebase:firebase-core:16.0.5'
     implementation 'com.google.firebase:firebase-auth:16.0.5'
     implementation 'com.google.firebase:firebase-database:16.0.5'

@@ -220,6 +220,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterFragm
             form.setEmail(data.getEmail());
             form.setPassword(data.getPassword());
             form.setKontakkerabat(data.getKontakkerabat());
+            form.setKontakpribadi(data.getKontakpribadi());
             FRAGMENT_thirdSeal = true;
         }
 
