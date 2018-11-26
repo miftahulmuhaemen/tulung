@@ -8,6 +8,42 @@
         <item>O</item>
     </array>
 
+    <array name="AlertMenu">
+        <item>@string/tersesat</item>
+        <item>Kecelakaan</item>
+        <item>Serangan Binatang</item>
+        <item>Bencana</item>
+        <item>@string/kesurupan</item>
+        <item>Lain-Lain</item>
+    </array>
 
+    <array name="Kecelakaan">
+        <item>@string/LukaKecil</item>
+        <item>@string/LukaBerat</item>
+        <item>@string/PatahTulang</item>
+        <item>@string/Terkilir</item>
+    </array>
+
+    <array name="SeranganBinatang">
+        <item>@string/HewanBesar</item>
+        <item>@string/Reptil</item>
+        <item>@string/Serangga</item>
+    </array>
+
+    <array name="Bencana">
+        <item>@string/Banjir</item>
+        <item>@string/TanahLongsor</item>
+        <item>@string/KebakaranHutan</item>
+        <item>@string/GasAlam</item>
+        <item>@string/Gempa</item>
+    </array>
+
+    <array name="orang">
+        <item>@string/satu</item>
+        <item>@string/dua</item>
+        <item>@string/tiga</item>
+        <item>@string/empat</item>
+        <item>@string/lebih</item>
+    </array>
 
 </resources>

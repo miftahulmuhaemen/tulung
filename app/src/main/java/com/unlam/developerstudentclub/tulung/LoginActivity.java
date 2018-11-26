@@ -71,6 +71,7 @@ public class LoginActivity extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progressBar.setVisibility(View.VISIBLE);
                 final String email = edt_email.getText().toString(),
                        password = edt_password.getText().toString();
                 firebaseAuth.signInWithEmailAndPassword(email,password)
@@ -87,6 +88,7 @@ public class LoginActivity extends AppCompatActivity {
 //                                                Log.d("BROKE", item.getAlergimakanan() + "");
                                                 Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                                                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                                progressBar.setVisibility(View.GONE);
                                                 getBaseContext().startActivity(intent);
                                                 finish();
                                             }
@@ -94,10 +96,12 @@ public class LoginActivity extends AppCompatActivity {
 
                                         @Override
                                         public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            progressBar.setVisibility(View.GONE);
                                             Toast.makeText(getApplicationContext(), databaseError.getMessage(),Toast.LENGTH_SHORT).show();
                                         }
                                     });
                                 } else {
+                                    progressBar.setVisibility(View.GONE);
                                     Toast.makeText(getApplicationContext(),"E-mail atau password anda salah.",Toast.LENGTH_SHORT).show();
                                 }
                             }

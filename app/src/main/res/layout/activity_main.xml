@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer"
@@ -29,78 +28,78 @@
 
         </android.support.design.widget.AppBarLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/btn_grantPermission"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center">
-
-            <ProgressBar
-                android:id="@+id/progressMain"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@id/information_text"
-                android:visibility="invisible"
-                android:layout_centerHorizontal="true"/>
-
-            <TextView
-                android:id="@+id/status"
-                android:layout_width="200dp"
-                android:layout_height="70dp"
-                android:text="Normal"
-                android:textSize="33sp"
-                android:textStyle="bold"
-                android:textAllCaps="true"
-                android:gravity="center"
-                android:layout_centerHorizontal="true"/>
-
-            <TextView
-                android:id="@+id/information_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/medium_margin_globally"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:layout_below="@id/status"
-                android:text="Gunakan aplikasi ini dengan bijak, jika hanya anda berada dalam bahaya dan perlu bantuan, tekan tombol dibawah."
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textAlignment="center"
-                android:lines="5"
-                android:textColor="@color/dark"
-                />
-
-        </RelativeLayout>
-
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/mainAlert"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_gravity="bottom|center"
-            android:layout_marginBottom="@dimen/large_margin_globally"
-            app:backgroundTint="@color/dark"
-            android:tint="@color/White"
-            android:src="@drawable/ic_wifi_tethering_black_24dp"
+            android:text="Grant Permission"
+            android:visibility="invisible"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_centerHorizontal="true"
             />
 
-            <View
-                android:id="@+id/barStatus"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="@color/colorPrimary"
-                android:layout_gravity="bottom"
-                />
+        <ProgressBar
+            android:id="@+id/progressMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/information_text"
+            android:visibility="invisible"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:text="@string/normal"
+            android:textSize="33sp"
+            android:fontFamily="sans-serif-light"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/information_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_margin_globally"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_below="@id/status"
+            android:text="@string/dialog_normal"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-light"
+            android:textAlignment="center"
+            android:lines="5"
+            android:textColor="@color/dark"
+            />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/barStatus"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/colorPrimary"
+        android:layout_gravity="bottom"
+        />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/mainAlert"
+        android:layout_width="87dp"
+        android:layout_height="81dp"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="44dp"
+        android:src="@drawable/ic_wifi_tethering_black_24dp"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabSize="normal"/>
 
 
     </android.support.design.widget.CoordinatorLayout>
-
-    <android.support.design.widget.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:headerLayout="@layout/navheader"
-        app:menu="@menu/menu_drawer" />
 
 </android.support.v4.widget.DrawerLayout>

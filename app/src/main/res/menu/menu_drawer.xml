@@ -1,32 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:id="@+id/my_move" android:checkableBehavior="single">
-        <item
-            android:orderInCategory="0"
-            android:id="@+id/game1"
-            android:icon="@drawable/ic_laptop_chromebook_black_24dp"
-            android:title="Game #1" />
-        <item
-            android:orderInCategory="0"
-            android:id="@+id/game2"
-            android:icon="@drawable/ic_laptop_chromebook_black_24dp"
-            android:title="Game #2" />
-    </group>
-    <group android:id="@+id/his_move" android:checkableBehavior="single">
-        <item
-            android:orderInCategory="1"
-            android:id="@+id/game5"
-            android:icon="@drawable/ic_laptop_chromebook_black_24dp"
-            android:title="Game #5" />
-        <item
-            android:orderInCategory="1"
-            android:id="@+id/game6"
-            android:icon="@drawable/ic_laptop_chromebook_black_24dp"
-            android:title="Game #6" />
-        <item
-            android:orderInCategory="1"
-            android:id="@+id/game7"
-            android:icon="@drawable/ic_laptop_chromebook_black_24dp"
-            android:title="Game #7" />
-    </group>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/exit"
+        android:icon="@drawable/ic_close_black_24dp"
+        android:title="exit"
+        app:showAsAction="always"/>
 </menu>

@@ -53,9 +53,14 @@ dependencies {
     implementation('devlight.io:navigationtabbar:1.2.5') {
         exclude group: "com.android.support"
     }
+    implementation ( 'com.github.thekhaeng:pushdown-anim-click:1.1.1' ){
+        exclude group: 'com.android.support'
+    }
+
     implementation 'com.google.firebase:firebase-core:16.0.5'
     implementation 'com.google.firebase:firebase-auth:16.0.5'
     implementation 'com.google.firebase:firebase-database:16.0.5'
     implementation 'com.google.android.gms:play-services-auth:16.0.1'
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
 }
 apply plugin: 'com.google.gms.google-services'

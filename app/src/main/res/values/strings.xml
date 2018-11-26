@@ -2,8 +2,10 @@
     <string name="daftar">Anda tidak punya akun? <b>Daftar</b>.</string>
     <string name="masuk">Anda sudah punya akun? <b>Masuk</b></string>
     <string name="lupa_katasandi">Lupa Katasandi?</string>
+    <string name="konfirmasiKeluar">Apakah anda yakin untuk keluar?</string>
     <string name="tidak">Tidak</string>
     <string name="kirim">Kirim</string>
+    <string name="ya">Ya</string>
     <string name="kirim_data">Kirim Data?</string>
 
     <string name="app_name">Tulung</string>
@@ -15,4 +17,43 @@
 
     <string name="navigation_drawer_open">Open</string>
     <string name="navigation_drawer_close">Close</string>
+
+    <string name="tersesat">Tersesat</string>
+    <string name="kesurupan">Kesurupan</string>
+
+    <string name="LukaKecil">Luka Kecil</string>
+    <string name="LukaBerat">Luka Berat</string>
+    <string name="PatahTulang">Patah Tulang</string>
+    <string name="Terkilir">Terkilir</string>
+
+    <string name="HewanBesar">Hewan Besar</string>
+    <string name="Reptil">Reptil</string>
+    <string name="Serangga">Serangga</string>
+
+    <string name="Banjir">Banjir</string>
+    <string name="TanahLongsor">Tanah Longsor</string>
+    <string name="KebakaranHutan">Kebakaran Hutan</string>
+    <string name="GasAlam">Gas Alam</string>
+    <string name="Gempa">Gempa</string>
+
+    <string name="dialog_GPS_NotEnabled">Tolong aktifkan pelacak GPS anda.</string>
+    <string name="dialog_head_GPS_NotEnabled">GPS Tidak Aktif</string>
+    <string name="dialog_PermissionNotPermitted">Tolong berikan hak akses kepada aplikasi ini.</string>
+    <string name="dialog_head_dialog_PermissionNotPermitted">Izin Tidak Diberikan</string>
+
+    <string name="normal">Normal</string>
+    <string name="perhatian">Perhatian</string>
+    <string name="menunggu">Dalam Proses</string>
+    <string name="dialog_normal">Gunakan aplikasi ini dengan bijak, jika hanya anda berada dalam bahaya dan perlu bantuan, tekan tombol dibawah.</string>
+    <string name="dialog_perhatian">Harap tenang, informasi sudah diterima pusat. Segera pertolongan akan datang. Jika dirasa sudah tidak memerlukan bantuan, silahkan tekan lama tombol dibawah.</string>
+    <string name="dialog_menunggu">Harap tenang, saat ini pemberitahuan belum sampai pusat.</string>
+
+    <string name="nanyaOrang">Berapa banyak orang?</string>
+
+    <string name="satu">1</string>
+    <string name="dua">2</string>
+    <string name="tiga">3</string>
+    <string name="empat">4</string>
+    <string name="lebih">> ~ 4</string>
+
 </resources>

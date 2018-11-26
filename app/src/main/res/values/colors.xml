@@ -7,4 +7,5 @@
     <color name="Black">#000</color>
     <color name="MainAlertButton">#f7f320</color>
     <color name="dark">#212121</color>
+    <color name="red">#db1c1c</color>
 </resources>
